@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Victor Uzoma Nwosu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* =========================
+           SECTION 1 – HERO
+        ========================== */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .hero button {
+            padding: 14px 28px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #000;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        /* =========================
+           SECTION 2 – ABOUT
+        ========================== */
+        .about {
+            background-color: #f5f5f5;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;   /* centres container */
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Heading centred */
+        .container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Paragraph left-aligned */
+        .container p {
+            font-size: 1.1rem;
+            color: #444;
+            text-align: left;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1 -->
+    <section class="hero">
+        <h1>Victor Uzoma Nwosu</h1>
+        <p>"Powering Nigeria's Banking"</p>
+        <button>My Code Does The Talking</button>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a seasoned software developer with extensive experience designing,
+                building and maintaining enterprise-grade systems. My expertise spans
+                backend architecture, database engineering, financial systems integration,
+                and scalable web applications. I am passionate about writing clean,
+                maintainable code and delivering secure, high-performance solutions that
+                power mission-critical platforms.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
