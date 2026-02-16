@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Victor Uzoma Nwosu</title>
@@ -18,12 +19,12 @@
         }
 
         /* =========================
-           SECTION 1 – HERO
+           SECTION 1 – INTRO
         ========================== */
-        .hero {
+        .intro {
             height: 100vh;
             background:
-                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
@@ -37,18 +38,18 @@
             text-align: center;
         }
 
-        .hero h1 {
+        .intro h1 {
             font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        .hero p {
+        .intro p {
             font-size: 1.5rem;
             margin-bottom: 30px;
             font-style: italic;
         }
 
-        .hero button {
+        .intro button {
             padding: 14px 28px;
             font-size: 1rem;
             border: none;
@@ -59,7 +60,7 @@
             transition: 0.3s ease;
         }
 
-        .hero button:hover {
+        .intro button:hover {
             background-color: #000;
             color: #ffffff;
         }
@@ -69,16 +70,22 @@
         ========================== */
         .about {
             background-color: #f5f5f5;
-            padding: 80px 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;   /* centres container */
+            max-width: 100%;
+            margin: 0;
+            /* centres container */
             background: #ffffff;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 50px 20px;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* Heading centred */
@@ -97,11 +104,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
+            .intro h1 {
                 font-size: 2rem;
             }
 
-            .hero p {
+            .intro p {
                 font-size: 1.2rem;
             }
 
@@ -109,13 +116,13 @@
                 padding: 30px;
             }
         }
-
     </style>
 </head>
+
 <body>
 
     <!-- SECTION 1 -->
-    <section class="hero">
+    <section class="intro">
         <h1>Victor Uzoma Nwosu</h1>
         <p>"Powering Nigeria's Banking"</p>
         <button>I Love To Code & It Pays</button>
@@ -137,4 +144,5 @@
     </section>
 
 </body>
+
 </html>
