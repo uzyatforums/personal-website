@@ -40,6 +40,34 @@ body {
     font-family: "Armata", sans-serif;
 }
 
+
+/* CTA Button */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #ffffff;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.cta-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
 /* =========================
    SECTION 1 – INTRO
 ========================= */

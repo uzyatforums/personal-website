@@ -12,8 +12,8 @@
 }
 
 .container {
-    max-width: 100%;
-    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
     background: #ffffff;
     padding: 50px 20px;
     border-radius: 0;
@@ -70,4 +70,10 @@
     .container {
         padding: 30px;
     }
+}
+
+/* Download CV Link */
+.download-cv {
+    text-align: center;
+    margin-top: 20px;
 }
