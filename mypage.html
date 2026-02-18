@@ -19,26 +19,48 @@
 
 <body>
 
-    <div id="title-section"></div>
-    <div id="about-section"></div>
+    <!-- SECTION 1 -->
+    <div id="title-section">
 
-    <script>
-        // Function to load HTML content
-        async function loadSection(id, file) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) throw new Error(`Failed to load ${file}`);
-                const content = await response.text();
-                document.getElementById(id).innerHTML = content;
-            } catch (error) {
-                console.error(error);
-            }
-        }
+        <section class="intro">
+            <h1>Victor Uzoma Nwosu</h1>
+            <p>"Powering Nigeria's Banking"</p>
+            <button class="cta-btn">
+                <i class="fa-solid fa-naira-sign"></i>
+                I Love To Code & It Pays
+            </button>
+        </section>
 
-        // Load sections
-        loadSection('title-section', 'title/title.html');
-        loadSection('about-section', 'aboutme/aboutme.html');
-    </script>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div id="about-section">
+        <section class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    I am a seasoned software developer with extensive experience designing,
+                    building and maintaining enterprise-grade systems. My expertise spans
+                    backend architecture, database engineering, financial systems integration,
+                    and scalable web applications. I am passionate about writing clean,
+                    maintainable code and delivering secure, high-performance solutions that
+                    power mission-critical platforms.
+                </p>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/uzoma-victor-nwosu-2a7046b0/"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/uzomav.nwosu"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://web.facebook.com/uzynwosu"><i class="fa-brands fa-facebook"
+                            target="_blank"></i></a>
+                    <a href="mailto:uzyatforums@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="download-cv">
+                    <a href="aboutme/cv-victor-uzoma-nwosu.pdf" download>Download CV</a>
+                </div>
+            </div>
+        </section>
+    </div>
 
 </body>
 
