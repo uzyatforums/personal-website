@@ -40,8 +40,9 @@ body {
     font-family: "Armata", sans-serif;
 }
 
-
-/* CTA Button */
+/* =========================
+   CTA BUTTONS
+========================= */
 .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -61,73 +62,100 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hover */
+/* Hover effect */
 .cta-btn:hover {
     background-color: #ffffff;
     color: #000000;
 }
 
-
 /* =========================
-   SECTION 1 – INTRO
+   FULL-SCREEN SECTION LAYOUT
 ========================= */
-.intro {
+.fullscreen-section {
     height: 100vh;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/title-background.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-
+    /* full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #ffffff;
+
+    position: relative;
+    overflow: hidden;
 }
 
-.intro h1 {
-    font-size: 3rem;
+.fullscreen-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* semi-transparent overlay */
+    z-index: 0;
+}
+
+.fullscreen-section>* {
+    position: relative;
+    z-index: 1;
+    /* content above overlay */
+}
+
+.fullscreen-section h1,
+.fullscreen-section h2 {
     margin-bottom: 10px;
 }
 
-.intro p {
-    font-size: 1.5rem;
+.fullscreen-section p {
     margin-bottom: 30px;
     font-style: italic;
 }
 
-.intro button {
-    padding: 14px 28px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #ffffff;
-    color: #000;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* =========================
+   SECTION 1 – INTRO
+========================= */
+.intro {
+    background: url('../images/title-background.jpg') center/cover no-repeat;
 }
 
-.intro button:hover {
-    background-color: #000;
-    color: #ffffff;
+.intro h1 {
+    font-size: 3rem;
+}
+
+.intro p {
+    font-size: 1.5rem;
 }
 
 /* =========================
-   SECTION 2 – ABOUT
-   ========================= */
-/* (Removed) */
+   SECTION 3 – CRAPS GAME
+========================= */
+.craps-game {
+    background: url('../images/craps-game-background.jpg') center/cover no-repeat;
+}
 
-/* Responsive */
+.craps-game h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.craps-game p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-    .intro h1 {
+
+    .fullscreen-section h1,
+    .fullscreen-section h2 {
         font-size: 2rem;
     }
 
-    .intro p {
-        font-size: 1.2rem;
+    .fullscreen-section p {
+        font-size: 1rem;
     }
 }
