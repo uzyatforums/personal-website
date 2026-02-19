@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./title/title.css">
     <link rel="stylesheet" href="./aboutme/aboutme.css">
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
+
+
 </head>
 
 
@@ -25,7 +27,7 @@
         <div class="content-wrapper">
             <h1>Victor Uzoma Nwosu</h1>
             <p>"Powering Nigeria's Banking"</p>
-            <button class="cta-btn">
+            <button class="cta-btn" onclick="makeDreamComeTrue()">
                 <i class="fa-solid fa-naira-sign"></i>
                 I Love To Code & It Pays
             </button>
@@ -83,3 +85,19 @@
 
 
 </html>
+
+
+<script>
+
+    function makeDreamComeTrue() {
+        const intro = document.querySelector(".intro");
+
+        intro.style.backgroundImage =
+            'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
+        intro.style.backgroundSize = "cover";
+        intro.style.backgroundPosition = "center";
+        intro.style.backgroundRepeat = "no-repeat";
+    }
+
+
+</script>
