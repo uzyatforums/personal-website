@@ -70,9 +70,9 @@
                 <div class="craps-registration-pane">
                     <div> Enter username to begin </div>
                     <div>
-                        <input class="craps-registration-input">
+                        <input class="craps-registration-input" id="user-name-input">
                     </div>
-                    <div class="craps-registration-continue">
+                    <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
                         Continue
                     </div>
                 </div>
@@ -99,5 +99,8 @@
         intro.style.backgroundRepeat = "no-repeat";
     }
 
+    function registerCrapsPlayer() {
+        let crapsusername = document.getElementById("user-name-input").value
 
+    }
 </script>
