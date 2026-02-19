@@ -1,0 +1,24 @@
+/* =========================
+   SECTION 3 – CRAPS GAME
+========================= */
+.craps-game {
+    background: url('../images/craps-game-background.jpg') center/cover no-repeat;
+}
+
+/* Push content upward intentionally */
+.craps-game .content-wrapper {
+    margin-top: -80px;
+    /* controlled upward shift */
+}
+
+/* Game container */
+.craps-game-container {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+
+    margin: 2rem auto 0;
+    padding: 20px;
+
+    border: 2px solid white;
+}

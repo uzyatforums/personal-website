@@ -72,46 +72,47 @@ body {
    FULL-SCREEN SECTION LAYOUT
 ========================= */
 .fullscreen-section {
-    height: 100vh;
-    /* full viewport height */
+    min-height: 100vh;
+    /* better than height for mobile */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: #ffffff;
 
     position: relative;
+    padding: 2rem;
+    /* prevents edge sticking on small devices */
     overflow: hidden;
 }
 
 .fullscreen-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    /* semi-transparent overlay */
     z-index: 0;
 }
 
-.fullscreen-section>* {
+/* Content wrapper controls spacing */
+.content-wrapper {
     position: relative;
     z-index: 1;
-    /* content above overlay */
+    width: 100%;
+    max-width: 1100px;
 }
 
+/* Shared heading spacing */
 .fullscreen-section h1,
 .fullscreen-section h2 {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .fullscreen-section p {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
     font-style: italic;
 }
+
 
 /* =========================
    SECTION 1 – INTRO
@@ -128,34 +129,48 @@ body {
     font-size: 1.5rem;
 }
 
-/* =========================
-   SECTION 3 – CRAPS GAME
-========================= */
-.craps-game {
-    background: url('../images/craps-game-background.jpg') center/cover no-repeat;
-}
-
-.craps-game h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.craps-game p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .fullscreen-section h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+    .fullscreen-section {
+        padding: 1.5rem;
+    }
 
     .fullscreen-section h1,
     .fullscreen-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .fullscreen-section p {
         font-size: 1rem;
+    }
+
+    .craps-game-container {
+        height: 300px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+    .fullscreen-section h1,
+    .fullscreen-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
