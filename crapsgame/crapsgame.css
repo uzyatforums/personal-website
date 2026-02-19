@@ -24,6 +24,11 @@
     border: 2px solid white;
 }
 
+#craps-registration-pane {
+    margin-top: 55px;
+    text-align: center;
+}
+
 .craps-registration-input {
     background: none;
     border: none;
@@ -43,4 +48,8 @@
 
 .craps-registration-continue:hover {
     cursor: pointer;
+}
+
+#craps-main-section {
+    display: "none";
 }

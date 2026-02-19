@@ -67,7 +67,7 @@
             <h2>Craps Casino Game</h2>
 
             <div class="craps-game-container">
-                <div class="craps-registration-pane">
+                <div id="craps-registration-pane">
                     <div> Enter username to begin </div>
                     <div>
                         <input class="craps-registration-input" id="user-name-input">
@@ -76,7 +76,11 @@
                         Continue
                     </div>
                 </div>
+                <div id="craps-main-section">
+                    MAIN SECTION
+                </div>
             </div>
+
         </div>
         </div>
     </section>
@@ -86,6 +90,8 @@
 
 </html>
 
+
+<script src="./crapsgame/crapsgame.js"></script>
 
 <script>
 
@@ -99,8 +105,5 @@
         intro.style.backgroundRepeat = "no-repeat";
     }
 
-    function registerCrapsPlayer() {
-        let crapsusername = document.getElementById("user-name-input").value
 
-    }
 </script>
