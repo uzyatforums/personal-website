@@ -16,7 +16,22 @@
     <link rel="stylesheet" href="./aboutme/aboutme.css">
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
 
+    <script src="./crapsgame/crapsgame.js" defer></script>
 
+    <script>
+
+        function makeDreamComeTrue() {
+            const intro = document.querySelector(".intro");
+
+            intro.style.backgroundImage =
+                'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
+            intro.style.backgroundSize = "cover";
+            intro.style.backgroundPosition = "center";
+            intro.style.backgroundRepeat = "no-repeat";
+        }
+
+
+    </script>
 </head>
 
 
@@ -70,7 +85,7 @@
                 <div id="craps-registration-pane">
                     <div> Enter username to begin </div>
                     <div>
-                        <input class="craps-registration-input" id="user-name-input">
+                        <input class="craps-registration-input" id="craps-username-input">
                     </div>
                     <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
                         Continue
@@ -80,7 +95,6 @@
                     MAIN SECTION
                 </div>
             </div>
-
         </div>
         </div>
     </section>
@@ -89,21 +103,3 @@
 
 
 </html>
-
-
-<script src="./crapsgame/crapsgame.js"></script>
-
-<script>
-
-    function makeDreamComeTrue() {
-        const intro = document.querySelector(".intro");
-
-        intro.style.backgroundImage =
-            'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
-        intro.style.backgroundSize = "cover";
-        intro.style.backgroundPosition = "center";
-        intro.style.backgroundRepeat = "no-repeat";
-    }
-
-
-</script>

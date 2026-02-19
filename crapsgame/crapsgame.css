@@ -39,11 +39,38 @@
 }
 
 .craps-registration-input:focus {
-    outline-width: 0;
+    outline: none;
+    border: 2px solid #00aaff;
+    /* a soft blue border */
+    box-shadow: 0 0 5px #00aaff;
+    /* glow effect */
+    border-radius: 4px;
+    /* optional */
 }
 
 .craps-registration-continue {
     margin-top: 25px;
+    border: 2px;
+}
+
+.craps-registration-continue {
+    display: inline-block;
+    /* shrink to fit content */
+    padding: 8px 20px;
+    /* add some space around text */
+    border: 2px solid #ffcc00;
+    /* your border */
+    border-radius: 5px;
+    /* optional rounded corners */
+    cursor: pointer;
+    /* shows it’s clickable */
+    font-weight: bold;
+    background-color: #1a1a1a;
+    /* optional for casino theme */
+    color: #fff;
+    /* text color */
+    text-align: center;
+    /* center text */
 }
 
 .craps-registration-continue:hover {
