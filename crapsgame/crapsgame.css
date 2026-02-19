@@ -13,6 +13,7 @@
 
 /* Game container */
 .craps-game-container {
+    background: url('../images/crapstable.png') center/cover no-repeat;
     width: 100%;
     max-width: 700px;
     height: 400px;
@@ -21,4 +22,25 @@
     padding: 20px;
 
     border: 2px solid white;
+}
+
+.craps-registration-input {
+    background: none;
+    border: none;
+    border-bottom: solid white 1px;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+}
+
+.craps-registration-input:focus {
+    outline-width: 0;
+}
+
+.craps-registration-continue {
+    margin-top: 25px;
+}
+
+.craps-registration-continue:hover {
+    cursor: pointer;
 }
