@@ -5,9 +5,11 @@
     --title-margin-bottom: calc(var(--height-scale) * 0.25);
 }
 
-#craps-game {
-    background-image: url('../images/Vegas.jpg');
+.craps-game {
+    background-image: url('../images/craps-game-background.jpg');
     background-position: center top;
+    background-size: cover;      /* 🔥 This is the key */
+    background-repeat: no-repeat;
     color: white;
     padding: 1px;
 }
@@ -24,7 +26,7 @@
     height: var(--height-scale);
     border: solid white 2px;
     margin: 0 auto;
-    background-image: url('../images/CrapsTable.png');
+    background-image: url('../images/crapstable.png');
     background-size: cover;
     background-position: center top;
 }
