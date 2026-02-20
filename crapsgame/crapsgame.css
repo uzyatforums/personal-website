@@ -1,27 +1,32 @@
-/* =========================
-   SECTION 3 – CRAPS GAME
-========================= */
-.craps-game {
-    background: url('../images/craps-game-background.jpg') center/cover no-repeat;
+:root {
+    --width-scale: min(700px, 80vw, 80vh);
+    --height-scale: calc(var(--width-scale) * 0.714);
+    --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
+    --title-margin-bottom: calc(var(--height-scale) * 0.25);
 }
 
-/* Push content upward intentionally */
-.craps-game .content-wrapper {
-    margin-top: -80px;
-    /* controlled upward shift */
+#craps-game {
+    background-image: url('../images/Vegas.jpg');
+    background-position: center top;
+    color: white;
+    padding: 1px;
 }
 
-/* Game container */
+.craps-game-title {
+    font-size: var(--game-title-size);
+    text-align: center;
+    margin-top: calc((100vh - var(--game-title-size) - var(--title-margin-bottom) - var(--height-scale)) / 2);
+    margin-bottom: var(--title-margin-bottom);
+}
+
 .craps-game-container {
-    background: url('../images/crapstable.png') center/cover no-repeat;
-    width: 100%;
-    max-width: 700px;
-    height: 400px;
-
-    margin: 2rem auto 0;
-    padding: 20px;
-
-    border: 2px solid white;
+    width: var(--width-scale);
+    height: var(--height-scale);
+    border: solid white 2px;
+    margin: 0 auto;
+    background-image: url('../images/CrapsTable.png');
+    background-size: cover;
+    background-position: center top;
 }
 
 #craps-registration-pane {
@@ -39,44 +44,28 @@
 }
 
 .craps-registration-input:focus {
-    outline: none;
-    border: 2px solid #00aaff;
-    /* a soft blue border */
-    box-shadow: 0 0 5px #00aaff;
-    /* glow effect */
-    border-radius: 4px;
-    /* optional */
+    outline-width: 0;
 }
 
 .craps-registration-continue {
     margin-top: 25px;
-    border: 2px;
-}
-
-.craps-registration-continue {
-    display: inline-block;
-    /* shrink to fit content */
-    padding: 8px 20px;
-    /* add some space around text */
-    border: 2px solid #ffcc00;
-    /* your border */
-    border-radius: 5px;
-    /* optional rounded corners */
-    cursor: pointer;
-    /* shows it’s clickable */
-    font-weight: bold;
-    background-color: #1a1a1a;
-    /* optional for casino theme */
-    color: #fff;
-    /* text color */
-    text-align: center;
-    /* center text */
 }
 
 .craps-registration-continue:hover {
     cursor: pointer;
+    font-weight: bold;
 }
 
 #craps-main-section {
-    display: "none";
+    display: none;
+}
+
+.craps-main-section-stats {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#craps-stats-money-container {
+    font-size: 30px;
+    margin: 25px 0 5px 0;
 }
