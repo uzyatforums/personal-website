@@ -38,7 +38,6 @@ function showMainGameSection() {
 
 function setupFirstRound() {
     document.getElementById(crapsStatsUsername).innerHTML = crapsUsername
-alert("crapsUsername")
     setMoney(startingMoney)
     setRounds(startingRounds)
 }
