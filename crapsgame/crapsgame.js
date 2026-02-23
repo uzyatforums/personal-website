@@ -112,13 +112,14 @@ function rollDice () {
 	rollADie({ element: diceRollElement, numberOfDice: numDiceToRoll, callback: delayedProcessDiceResult, delay: hideDiceDelayMs });
 }
 
+window.addEventListener("resize", formatDiceScale);
 function formatDiceScale () {
-	const vw = window.innerWidth * 0.8
-	const vh = window.innerHeight * 0.8
-	const widthScale = Math.min(700, vw, vh)
-	const heightScale = widthScale * 0.714
-	const scale = heightScale / 494.6592
-	document.getElementById(crapsRollDiceAnimationContainer).style.transform = "scale(" + scale + ")"
+  const vw = window.innerWidth * 0.8
+  const vh = window.innerHeight * 0.8
+  const widthScale = Math.min(700, vw, vh)
+  const heightScale = widthScale * 0.714
+  const scale = heightScale / 494.6592
+  document.getElementById(crapsRollDiceAnimationContainer).style.transform = "scale(" + scale + ")"
 }
 
 function delayedProcessDiceResult (diceResult) {
