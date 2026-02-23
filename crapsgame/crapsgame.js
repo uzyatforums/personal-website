@@ -11,6 +11,11 @@ const bets = {
 
 const minimumBet = 100
 
+// Craps Dice Roll Settings
+const numDiceToRoll = 2
+const hideDiceDelayMs = 10000000
+const processDiceResultDelayMs = 1800
+
 // HTML Element IDs
 const crapsUsernameInput = "craps-username-input"
 const crapsRegistrationPane = "craps-registration-pane"
@@ -18,8 +23,11 @@ const crapsMainSection = "craps-main-section"
 const crapsStatsUsername = "craps-stats-username"
 const crapsStatsMoney = "craps-stats-money"
 const crapsStatsRounds = "craps-stats-rounds"
-
 const crapsUserBetAmount = "craps-user-bet-amount"
+const crapsRollDiceButton = "craps-roll-dice-button"
+const crapsRollDiceAnimationContainer = "craps-roll-dice-animation-container"
+
+
 
 // In-game variables
 let currentMoney = startingMoney
@@ -95,4 +103,18 @@ function decreaseBet() {
 function setBetAmount(betAmount) {
     currentBetAmount = betAmount
     document.getElementById(crapsUserBetAmount).innerHTML = "$" + betAmount
+}
+
+function rollDice () {
+    document.getElementById(crapsRollDiceButton).style.display = "none"
+	const diceRollElement = document.getElementById(crapsRollDiceAnimationContainer)
+	rollADie({ element: diceRollElement, numberOfDice: numDiceToRoll, callback: delayedProcessDiceResult, delay: hideDiceDelayMs });
+}
+
+function delayedProcessDiceResult (diceResult) {
+	setTimeout(function() { processDiceResult(diceResult) }, processDiceResultDelayMs)
+}
+
+function processDiceResult (diceResult) {
+  console.log(diceResult)
 }
