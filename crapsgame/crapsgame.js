@@ -26,6 +26,9 @@ const crapsStatsRounds = "craps-stats-rounds"
 const crapsUserBetAmount = "craps-user-bet-amount"
 const crapsRollDiceButton = "craps-roll-dice-button"
 const crapsRollDiceAnimationContainer = "craps-roll-dice-animation-container"
+const crapsBettingGridContainer = "craps-betting-grid-container"
+const crapsRoundFinishMessage = "craps-round-finish-message"
+const crapsRoundFinishGridContainer = "craps-round-finish-grid-container"
 
 
 
@@ -38,6 +41,7 @@ let canChangeBet = true
 
 function setupFirstRound () {
     document.getElementById(crapsStatsUsername).innerHTML = crapsUsername
+    document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
     currentMoney = startingMoney
     setMoney(currentMoney)
     setRounds(startingRounds)
@@ -112,6 +116,7 @@ function setBetAmount(betAmount) {
 }
 
 function rollDice () {
+    document.getElementById(crapsBettingGridContainer).style.display = "none"
     canChangeBet = false
     formatDiceScale ()
     document.getElementById(crapsRollDiceButton).style.display = "none"
@@ -136,13 +141,20 @@ function processDiceResult (diceResult) {
         diceSumResult = bets.odd
     }
     setRounds(currentRounds + 1)
+    let roundFinishMessage = ""
     if (diceSumResult === currentBet) {
-        // alert("YOU WIN!")
+        roundFinishMessage = "YOU WIN!"
         setMoney(currentMoney + currentBetAmount)
     } else {
-        // alert("YOU LOSE")
+        roundFinishMessage = "YOU LOSE :("
         setMoney(currentMoney - currentBetAmount)
     }
+    if (currentMoney === 0) {
+        roundFinishMessage = "YOU'RE OUT!"
+    }
+    document.getElementById(crapsBettingGridContainer).style.display = "none"
+    document.getElementById(crapsRoundFinishGridContainer).style.display = "block"
+    document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
 }
 
 function delayedProcessDiceResult (diceResult) {

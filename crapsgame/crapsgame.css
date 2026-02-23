@@ -136,3 +136,27 @@
     font-weight: bold;
 }
 
+.craps-round-finish-grid {
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    width: 80%;
+    margin: 0 auto;
+    border: solid white 2px;
+    border-radius: 5px;
+}
+
+#craps-round-finish-message {
+    padding: calc(var(--height-scale) * 0.03);
+    border-right: solid white 2px;
+    border-left: solid white 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#craps-next-round-button-disabled {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: grey;
+}
+
+#craps-next-round-button-disabled:hover {
+    cursor: not-allowed;
+}
