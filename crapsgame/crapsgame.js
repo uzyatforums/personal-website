@@ -29,6 +29,8 @@ const crapsRollDiceAnimationContainer = "craps-roll-dice-animation-container"
 const crapsBettingGridContainer = "craps-betting-grid-container"
 const crapsRoundFinishMessage = "craps-round-finish-message"
 const crapsRoundFinishGridContainer = "craps-round-finish-grid-container"
+const crapsNextRoundButton = "craps-next-round-button"
+const crapsNextRoundButtonDisabled = "craps-next-round-button-disabled"
 
 
 
@@ -40,8 +42,9 @@ let currentBetAmount = minimumBet
 let canChangeBet = true
 
 function setupFirstRound () {
-    // document.getElementById(crapsRollDiceAnimationContainer).style.display = "none"
     document.getElementById(crapsRollDiceAnimationContainer).style.display = "block"
+    document.getElementById(crapsNextRoundButtonDisabled).style.display = "none"
+    document.getElementById(crapsNextRoundButton).style.display = "block"
     document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
     document.getElementById(crapsRollDiceButton).style.display = "block"
     document.getElementById(crapsBettingGridContainer).style.display = "block"
@@ -157,25 +160,30 @@ function formatDiceScale () {
 
 function processDiceResult (diceResult) {
     const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
-    let diceSumResult = bets.even
-    if (sum % 2 === 1) {
-        diceSumResult = bets.odd
-    }
-    setRounds(currentRounds + 1)
-    let roundFinishMessage = ""
+    let diceSumResult = sum % 2 === 0 ? bets.even : bets.odd;
+
+    setRounds(currentRounds + 1);
+
+    let roundFinishMessage = "";
+
     if (diceSumResult === currentBet) {
-        roundFinishMessage = "YOU WIN!"
-        setMoney(currentMoney + currentBetAmount)
+        roundFinishMessage = "YOU WIN!";
+        setMoney(currentMoney + currentBetAmount);
     } else {
-        roundFinishMessage = "YOU LOSE :("
-        setMoney(currentMoney - currentBetAmount)
+        roundFinishMessage = "YOU LOSE :(";
+        setMoney(currentMoney - currentBetAmount);
     }
+
     if (currentMoney === 0) {
-        roundFinishMessage = "YOU'RE OUT!"
+        roundFinishMessage = "YOU'RE OUT!";
+
+        document.getElementById(crapsNextRoundButton).style.display = "none";
+        document.getElementById(crapsNextRoundButtonDisabled).style.display = "block";
     }
-    document.getElementById(crapsBettingGridContainer).style.display = "none"
-    document.getElementById(crapsRoundFinishGridContainer).style.display = "block"
-    document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
+
+    document.getElementById(crapsBettingGridContainer).style.display = "none";
+    document.getElementById(crapsRoundFinishGridContainer).style.display = "block";
+    document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage;
 }
 
 function delayedProcessDiceResult (diceResult) {
