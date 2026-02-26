@@ -1,18 +1,19 @@
 async function getNewRandomQuote() {
-    try {
-        const response = await fetch("https://api.quotable.io/random");
+        const response = await fetch("https://api.quotable.io/quotes/random");
+        if(!response.ok) {
+            alert("There was a problem fetching a new quote. Please try again later.");
+        }
         const data = await response.json();
 
-        document.getElementById("random-quote-text").innerText = data.content;
-        document.getElementById("random-quote-author").innerText = data.author;
+        const quoteText = data[0].content;
+        const quoteAuthor = data[0].author;
+        document.getElementById("random-quote-text").textContent = quoteText
+        document.getElementById("random-quote-author").textContent = quoteAuthor
 
         // 🌈 Change background gradient
         const section = document.getElementById("section-4");
         section.style.background = getRandomGradient();
 
-    } catch (error) {
-        alert("An error occurred while fetching a new quote. Please try again later.");
-    }
 }
 
 function getRandomColour() {
