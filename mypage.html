@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./aboutme/aboutme.css">
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
     <link rel="stylesheet" href="./crapsgame/utils.css">
+    <link rel="stylesheet" href="./randomQuoteGenerator/randomQuoteGenerator.css">
 
 
 
@@ -136,13 +137,28 @@
         </div>
     </div>
 
-</body>
+    <!-- SECTION 4 -->
+    <section id="section-4">
+        <h2 class="section-title">Random Quote Generator</h2>
 
+        <div class="vvvvv" id="random-quote-generator">
+            <div class="quote-block">
+                <span>Quote:</span>
+                <div id="random-quote-text"></div>
+            </div>
+            <div class="author-block">
+                <span>Author:</span>
+                <div id="random-quote-author"></div>
+            </div>
+            <div class="new-quote-btn" onclick="getNewRandomQuote()">New Quote</div>
+        </div>
+    </section>
 
 </html>
 
 
 <script src="./crapsgame/crapsgame.js"></script>
+<script src="./randomQuoteGenerator/randomQuoteGenerator.js"></script>
 <script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
 <script>
 
@@ -156,5 +172,8 @@
         intro.style.backgroundRepeat = "no-repeat";
     }
 
+    window.onload = function () {
+        getNewRandomQuote();
+    };
 
 </script>
