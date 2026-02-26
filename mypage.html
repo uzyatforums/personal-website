@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./aboutme/aboutme.css">
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
     <link rel="stylesheet" href="./crapsgame/utils.css">
-    
+    <link rel="stylesheet" href="./randomQuoteGenerator/randomQuoteGenerator.css">
 
 
 
@@ -138,21 +138,21 @@
     </div>
 
     <!-- SECTION 4 -->
-    <section id="section-4">
-        <h2>Random Quote Generator</h2>
+<section id="section-4">
+    <h2 class="section-title">Random Quote Generator</h2>
 
-        <div">
-            <div">
-                <span>Quote:</span>
-                <div id="random-quote-text"></div>
-            </div>
-            <div>
-                <span>Author:</span>
-                <div id="random-quote-author"></div>
-            </div>
-            <div onclick="getNewRandomQuote()">New Quote</div>
+    <div class="vvvvv" id="random-quote-generator">
+        <div class="quote-block">
+            <span>Quote:</span>
+            <div id="random-quote-text"></div>
         </div>
-    </section>
+        <div class="author-block">
+            <span>Author:</span>
+            <div id="random-quote-author"></div>
+        </div>
+        <div class="new-quote-btn" onclick="getNewRandomQuote()">New Quote</div>
+    </div>
+</section>
 
 </html>
 
