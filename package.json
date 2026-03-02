@@ -1,0 +1,23 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "personal website",
+  "homepage": "https://github.com/uzyatforums/personal-website#readme",
+  "bugs": {
+    "url": "https://github.com/uzyatforums/personal-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uzyatforums/personal-website.git"
+  },
+  "license": "ISC",
+  "author": "Victor Uzoma Nwosu",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
