@@ -73,17 +73,16 @@ body {
 ========================= */
 .fullscreen-section {
     min-height: 100vh;
-    /* better than height for mobile */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #ffffff;
-
+    color: white;
     position: relative;
     padding: 2rem;
-    /* prevents edge sticking on small devices */
     overflow: hidden;
+
+    /* background: url("hero.jpg") center/cover no-repeat; */
 }
 
 .fullscreen-section::before {
@@ -91,8 +90,19 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
 }
+
+.fullscreen-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.fullscreen-section {
+    min-height: 100vh;
+    padding: 2rem;
+    background: white;
+}
+
 
 /* Content wrapper controls spacing */
 .content-wrapper {
