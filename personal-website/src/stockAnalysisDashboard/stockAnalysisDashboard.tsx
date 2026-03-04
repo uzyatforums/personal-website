@@ -3,10 +3,11 @@ import {
     analyzeStock,
     VerticalAlignContainer,
     VerticalAlignContent
-} from './stockAnalysisDashboard.ts'
+} from './stockAnalysisDashboard'
 import { Oval } from 'react-loader-spinner'
+import DashboardGrid from './dashboardGrid'
 
-function stockAnalysisDashboard() {
+function StockAnalysisDashboard() {
 
     const [stockData, setStockData] = useState<any>()
     const [stockSymbol, setStockSymbol] = useState('')
@@ -35,8 +36,10 @@ function stockAnalysisDashboard() {
             <VerticalAlignContainer>
                 <VerticalAlignContent>
                 <div>
-                    <div onClick={() => goBack()}>Back</div>
-                    {JSON.stringify(stockData)}
+                    <DashboardGrid>
+                        stockData={stockData}
+                    </DashboardGrid>
+                    {/* {JSON.stringify(stockData)} */}
                 </div>
             </VerticalAlignContent>
         </VerticalAlignContainer >
@@ -88,4 +91,4 @@ function stockAnalysisDashboard() {
 }
 
 // ✅ NOW we are outside the function
-export default stockAnalysisDashboard
+export default StockAnalysisDashboard

@@ -1,9 +1,5 @@
 #stock-analysis-dashboard {
-    display: flex;
-    align-items: center;   /* vertical centre */
     min-height: 100vh;
-    padding-left: 8%;
-
     background-image: url('../images/city-sky-2.jpg');
     background-size: cover;
     background-position: center;
@@ -11,6 +7,8 @@
 }
 
 #root {
-    width: 100%;
-    max-width: 600px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
