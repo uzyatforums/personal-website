@@ -1,0 +1,16 @@
+#stock-analysis-dashboard {
+    display: flex;
+    align-items: center;   /* vertical centre */
+    min-height: 100vh;
+    padding-left: 8%;
+
+    background-image: url('../images/city-sky-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#root {
+    width: 100%;
+    max-width: 600px;
+}
