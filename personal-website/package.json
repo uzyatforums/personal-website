@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "gridstack": "^12.4.2",
+    "numabbr": "^1.0.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-loader-spinner": "^8.0.2"

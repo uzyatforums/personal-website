@@ -1,44 +1,57 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import 'gridstack/dist/gridstack.min.css';
 import { GridStack } from 'gridstack';
 import { DashboardGridContent } from './stockAnalysisDashboard'
+import NumberStat from './numberStat';
 
 function DashboardGrid({ stockData }: { stockData: any }) {
-        useEffect(() => {
-                var grid = GridStack.init()
-        });
+  useEffect(() => {
+    var grid = GridStack.init()
+  });
 
-        return (
-                <div>
-                        <div className="grid-stack">
-                                {/* First Row */}
-                                <div className="grid-stack-item" gs-w="3">
-                                        <DashboardGridContent className="grid-stack-item-content">
-                                                <div>{stockData.basicInfo.marketCap}</div>
-                                                <div>Market Cap</div>
-                                        </DashboardGridContent>
-                                </div>
-                                <div className="grid-stack-item" gs-w="3">
-                                        <DashboardGridContent className="grid-stack-item-content">
-                                                <div>{stockData.basicInfo.fullTimeEmployees}</div>
-                                                <div>Employees</div>
-                                        </DashboardGridContent>
-                                </div>
-                                <div className="grid-stack-item" gs-w="3">
-                                        <DashboardGridContent className="grid-stack-item-content">
-                                                <div>{stockData.basicInfo.totalRevenue}</div>
-                                                <div>Total Revenue</div>
-                                        </DashboardGridContent>
-                                </div>
-                                <div className="grid-stack-item" gs-w="3">
-                                        <DashboardGridContent className="grid-stack-item-content">
-                                                <div>{stockData.basicInfo.trailingEps}</div>
-                                                <div>Earnings Per Share</div>
-                                        </DashboardGridContent>
-                                </div>
-                        </div>
-                </div>
-        );
+  return (
+    <div>
+      <div className="grid-stack">
+        {/* First Row */}
+        <div className="grid-stack-item" gs-w="3">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NumberStat
+              value={stockData.basicInfo.marketCap}
+              label='Market Cap'
+              center={true}
+            ></NumberStat>
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="3">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NumberStat
+              value={stockData.basicInfo.fullTimeEmployees}
+              label='Employees'
+              center={true}
+            ></NumberStat>
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="3">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NumberStat
+              value={stockData.basicInfo.totalRevenue}
+              label='otal Revenue'
+              center={true}
+            ></NumberStat>
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="3">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NumberStat
+              value={stockData.basicInfo.trailingEps}
+              label='Earnings Per Share'
+              center={true}
+            ></NumberStat>
+          </DashboardGridContent>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 
