@@ -1,15 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import 'gridstack/dist/gridstack.min.css';
 import { GridStack } from 'gridstack';
 import { DashboardGridContent } from './stockAnalysisDashboard'
 import NumberStat from './numberStat';
 import LineChartContent from './lineChartContent'
 import NewsList from './newsLinks'
+import NewsSentimentAnalysis from './newsSentimentAnalysis';
 
 function DashboardGrid({ stockData }: { stockData: any }) {
+  const gridRef = useRef<GridStack | null>(null);
+
   useEffect(() => {
-    var grid = GridStack.init()
-  });
+    // Initialize GridStack with the ref to prevent double-init issues
+    if (!gridRef.current) {
+      gridRef.current = GridStack.init({
+        float: true,
+        cellHeight: 'auto',
+        animate: true,
+      });
+    }
+  }, []);
 
   return (
     <div>
@@ -21,7 +31,7 @@ function DashboardGrid({ stockData }: { stockData: any }) {
               value={stockData.basicInfo.marketCap}
               label='Market Cap'
               center={true}
-            ></NumberStat>
+            />
           </DashboardGridContent>
         </div>
         <div className="grid-stack-item" gs-w="3">
@@ -30,16 +40,16 @@ function DashboardGrid({ stockData }: { stockData: any }) {
               value={stockData.basicInfo.fullTimeEmployees}
               label='Employees'
               center={true}
-            ></NumberStat>
+            />
           </DashboardGridContent>
         </div>
         <div className="grid-stack-item" gs-w="3">
           <DashboardGridContent className="grid-stack-item-content">
             <NumberStat
               value={stockData.basicInfo.totalRevenue}
-              label='otal Revenue'
+              label='Total Revenue'
               center={true}
-            ></NumberStat>
+            />
           </DashboardGridContent>
         </div>
         <div className="grid-stack-item" gs-w="3">
@@ -48,20 +58,21 @@ function DashboardGrid({ stockData }: { stockData: any }) {
               value={stockData.basicInfo.trailingEps}
               label='Earnings Per Share'
               center={true}
-            ></NumberStat>
+            />
           </DashboardGridContent>
         </div>
+
         {/* Second Row */}
         <div className="grid-stack-item" gs-w="10" gs-h="3">
           <DashboardGridContent className="grid-stack-item-content">
             <LineChartContent
               priceHistory={stockData.priceHistory}
-            ></LineChartContent>
+            />
           </DashboardGridContent>
         </div>
         <div className="grid-stack-item" gs-w="2" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
-            <div style={{ marginBottom: '10px' }}>Future Earnings</div>
+            <div style={{ marginBottom: '10px', fontWeight: 'bold' }}>Future Earnings</div>
             {stockData.futureEarningsDates.map((nextDate: string) => (
               <div key={nextDate}>{nextDate}</div>
             ))}
@@ -77,7 +88,14 @@ function DashboardGrid({ stockData }: { stockData: any }) {
           </DashboardGridContent>
         </div>
 
-
+        <div className="grid-stack-item" gs-w="4" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            {/* PASS THE PROP HERE */}
+            <NewsSentimentAnalysis
+              newsTextAnalysis={stockData.newsTextAnalysis}
+            />
+          </DashboardGridContent>
+        </div>
 
 
 
@@ -85,6 +103,5 @@ function DashboardGrid({ stockData }: { stockData: any }) {
     </div>
   )
 }
-
 
 export default DashboardGrid;

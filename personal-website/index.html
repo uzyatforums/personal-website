@@ -151,7 +151,7 @@
                 <span>Author:</span>
                 <div id="random-quote-author"></div>
             </div>
-            <div class="new-quote-btn" onclick="getNewRandomQuote()">New Quote</div>
+            <div class="new-quote-btn" onclick="updateQuoteUI()">New Quote</div>
         </div>
     </section>
 
@@ -185,17 +185,37 @@
 
     function makeDreamComeTrue() {
         const intro = document.querySelector(".intro");
-
-        intro.style.backgroundImage =
-            'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
+        intro.style.backgroundImage = 'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
         intro.style.backgroundSize = "cover";
         intro.style.backgroundPosition = "center";
         intro.style.backgroundRepeat = "no-repeat";
     }
 
+    // New helper function to handle the UI update
+    async function updateQuoteUI() {
+        // 1. Call your async function and wait for the object {content, author}
+        const quote = await getNewRandomQuote();
+
+        // 2. Find the HTML elements
+        const textElement = document.getElementById('random-quote-text');
+        const authorElement = document.getElementById('random-quote-author');
+
+        // 3. Update the text on screen
+        if (textElement && authorElement) {
+            textElement.innerText = quote.content;
+            authorElement.innerText = quote.author;
+        }
+    }
+
+    // Call it on page load
     window.onload = function () {
-        getNewRandomQuote();
+        updateQuoteUI();
     };
+</script>
+
+<!-- window.onload = function () {
+getNewRandomQuote();
+}; -->
 
 </script>
 

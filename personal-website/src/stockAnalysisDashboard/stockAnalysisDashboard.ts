@@ -14,7 +14,10 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
     return data
 }
 
-export const PrimaryColor = '#467bb0'
+export const PrimaryColor = '#467bb0';
+export const ThemeGreen = '#7bdb76';
+export const ThemeYellow = '#ffcc5c';
+export const ThemeRed = '#ff6169';
 
 export const VerticalAlignContainer = styled.div`
     width: 100%;
