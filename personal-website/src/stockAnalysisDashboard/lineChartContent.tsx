@@ -1,4 +1,4 @@
-import { PrimaryColor } from './stockAnalysisDashboard'
+// import { PrimaryColor } from './stockAnalysisDashboard'
 import { Line } from 'react-chartjs-2'
 import { CategoryScale } from 'chart.js'
 import Chart from 'chart.js/auto'
