@@ -4,8 +4,12 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
         alert('Please enter a stock symbol to analyze')
         return
     }
-    const url = 'http://localhost:5000/analyze-stock/' + stockSymbolToAnalyze
-
+    //development url:
+    // const url = 'http://localhost:5000/analyze-stock/' + stockSymbolToAnalyze
+    //production url:
+    // const url = 'https://text-analysis-tool.onrender.com/analyze-stock/' + stockSymbolToAnalyze
+    const url = 'https://text-analysis-tool-glsz.onrender.com//analyze-stock/' + stockSymbolToAnalyze
+    
     const response = await fetch(url)
     if (!response.ok) {
         alert('There was a probblem getting the analysis for your stock: ' + stockSymbolToAnalyze)
