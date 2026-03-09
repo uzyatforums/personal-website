@@ -97,14 +97,25 @@ function DashboardGrid({ stockData }: { stockData: any }) {
           </DashboardGridContent>
         </div>
 
-        {/* <div className="grid-stack-item" gs-w="3" gs-h="2">
+        <div className="grid-stack-item" gs-w="3" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
             <img
-              src={`data:image/png;base64,${stockData.newsTextAnalysis.data.wordCloudImage}`}
-              style={{ height: '100%', width: '100%' }}
-            ></img>
+              src={
+                stockData.newsTextAnalysis.data.wordCloudImage.startsWith('data:image')
+                  ? stockData.newsTextAnalysis.data.wordCloudImage.trim()
+                  : `data:image/png;base64,${stockData.newsTextAnalysis.data.wordCloudImage.replace(/"/g, '').trim()}`
+              }
+              alt="Word Cloud"
+              style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+              onError={(e) => {
+                console.error("Base64 string was invalid. Check the console for the raw data.");
+                e.currentTarget.src = "https://placehold.co/600x400?text=Invalid+Image+Data";
+              }}
+            />
           </DashboardGridContent>
-        </div> */}
+        </div>
+
+
 
 
 
