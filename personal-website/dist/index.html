@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Victor Uzoma Nwosu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="./images/favicon.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -18,9 +18,12 @@
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
     <link rel="stylesheet" href="./crapsgame/utils.css">
     <link rel="stylesheet" href="./randomQuoteGenerator/randomQuoteGenerator.css">
+    <link rel="stylesheet" href="./stockAnalysisDashboard/stockAnalysisDashboard.css">
 
 
 
+  <script type="module" crossorigin src="./assets/index-T7HGUu5w.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BOeIh_m2.css">
 </head>
 
 
@@ -60,7 +63,7 @@
             </div>
 
             <div class="download-cv">
-                <a href="aboutme/cv-victor-uzoma-nwosu.pdf" download>Download CV</a>
+                <a href="/aboutme/cv-victor-uzoma-nwosu.pdf" download>Download CV</a>
             </div>
         </div>
     </section>
@@ -150,30 +153,51 @@
                 <span>Author:</span>
                 <div id="random-quote-author"></div>
             </div>
-            <div class="new-quote-btn" onclick="getNewRandomQuote()">New Quote</div>
+            <div class="new-quote-btn" onclick="updateQuoteUI()">New Quote</div>
         </div>
     </section>
+
+    <!-- SECTION 5 -->
+    <div id="stock-analysis-dashboard">
+        <div id="root"></div>
+    </div>
+</body>
 
 </html>
 
 
-<script src="./crapsgame/crapsgame.js"></script>
-<script src="./randomQuoteGenerator/randomQuoteGenerator.js"></script>
+<!-- <script =".//stockAnalysisDashboard/stockAnalysisDashboard.js"></script> -->
+ <script type="text/javascript" src="./crapsgame/crapsgame.js"></script>
+<script type="text/javascript" src="./randomQuoteGenerator/randomQuoteGenerator.js"></script>
 <script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
 <script>
 
     function makeDreamComeTrue() {
         const intro = document.querySelector(".intro");
-
-        intro.style.backgroundImage =
-            'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
+        intro.style.backgroundImage = 'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
         intro.style.backgroundSize = "cover";
         intro.style.backgroundPosition = "center";
         intro.style.backgroundRepeat = "no-repeat";
     }
 
-    window.onload = function () {
-        getNewRandomQuote();
-    };
+    // New helper function to handle the UI update
+    async function updateQuoteUI() {
+        // 1. Call your async function and wait for the object {content, author}
+        const quote = await getNewRandomQuote();
 
+        // 2. Find the HTML elements
+        const textElement = document.getElementById('random-quote-text');
+        const authorElement = document.getElementById('random-quote-author');
+
+        // 3. Update the text on screen
+        if (textElement && authorElement) {
+            textElement.innerText = quote.content;
+            authorElement.innerText = quote.author;
+        }
+    }
+
+    // Call it on page load
+    window.onload = function () {
+        updateQuoteUI();
+    };
 </script>

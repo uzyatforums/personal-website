@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Victor Uzoma Nwosu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/title/title.css">
+    <link rel="stylesheet" href="/aboutme/aboutme.css">
+    <link rel="stylesheet" href="/crapsgame/crapsgame.css">
+    <link rel="stylesheet" href="/crapsgame/utils.css">
+    <link rel="stylesheet" href="/randomQuoteGenerator/randomQuoteGenerator.css">
+    <link rel="stylesheet" href="/stockAnalysisDashboard/stockAnalysisDashboard.css">
+
+
+
+</head>
+
+
+<body>
+
+    <!-- SECTION 1 -->
+    <section class="fullscreen-section intro">
+        <div class="content-wrapper">
+            <h1>Victor Uzoma Nwosu</h1>
+            <p>"Powering Nigeria's Banking"</p>
+            <button class="cta-btn" onclick="makeDreamComeTrue()">
+                <i class="fa-solid fa-naira-sign"></i>
+                I Love To Code & It Pays
+            </button>
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a seasoned software developer with extensive experience designing,
+                building and maintaining enterprise-grade systems. My expertise spans
+                backend architecture, database engineering, financial systems integration,
+                and scalable web applications. I am passionate about writing clean,
+                maintainable code and delivering secure, high-performance solutions that
+                power mission-critical platforms.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/uzoma-victor-nwosu-2a7046b0/"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com/uzomav.nwosu"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://web.facebook.com/uzynwosu"><i class="fa-brands fa-facebook" target="_blank"></i></a>
+                <a href="mailto:uzyatforums@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="download-cv">
+                <a href="/aboutme/cv-victor-uzoma-nwosu.pdf" download>Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <div class="fullscreen-section" id="craps-game">
+        <div class="content-wrapper">
+            <h2>Craps Casino Game</h2>
+
+            <div class="craps-game-container">
+                <div id="craps-registration-pane">
+                    <div> Enter username to begin </div>
+                    <div>
+                        <input class="craps-registration-input" id="craps-username-input">
+                    </div>
+                    <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
+                        Continue
+                    </div>
+                </div>
+                <div id="craps-main-section">
+                    <div class="craps-main-section-stats">
+                        <div>
+                            Welcome, <span id="craps-stats-username"></span>
+                        </div>
+                        <div id="craps-stats-money-container">
+                            $<span id="craps-stats-money"></span>
+                        </div>
+                        <div>
+                            Rounds: <span id="craps-stats-rounds"></span>
+                        </div>
+                    </div>
+
+                    <div class="craps-on-table-container">
+                        <div id="craps-roll-dice-button" class="craps-roll-dice-container no-select"
+                            onclick="rollDice()">Roll Dice <i class="fas fa-dice"></i></div>
+                        <div id="craps-roll-dice-animation-container"></div>
+                    </div>
+                    <div class="craps-round-manager no-select">
+                        <div id="craps-betting-grid-container">
+                            <div class="craps-betting-grid no-select">
+                                <div class="craps-bet-button" id="EVEN" onclick="betEven()">
+                                    EVEN
+                                </div>
+                                <div class="craps-bet-amount-container">
+                                    <span class="craps-user-bet-amount-change" onclick="decreaseBet()">-</span>
+                                    <span id="craps-user-bet-amount">$100</span>
+                                    <span class="craps-user-bet-amount-change" onclick="increaseBet()">+</span>
+                                </div>
+                                <div class="craps-bet-button" id="ODD" onclick="betOdd()">
+                                    ODD
+                                </div>
+                            </div>
+                        </div>
+                        <div id="craps-round-finish-grid-container">
+                            <div class="craps-round-finish-grid no-select">
+                                <div id="craps-next-round-button" class="craps-round-finish-button"
+                                    onclick="setupNextRound()">
+                                    NEXT ROUND
+                                </div>
+                                <div id="craps-next-round-button-disabled" class="craps-round-finish-button">
+                                    NEXT ROUND
+                                </div>
+                                <div id="craps-round-finish-message">
+                                    YOU WIN!
+                                </div>
+                                <div class="craps-round-finish-button" onclick="exitGame()">
+                                    EXIT GAME
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <section id="section-4">
+        <h2 class="section-title">Random Quote Generator</h2>
+
+        <div class="vvvvv" id="random-quote-generator">
+            <div class="quote-block">
+                <span>Quote:</span>
+                <div id="random-quote-text"></div>
+            </div>
+            <div class="author-block">
+                <span>Author:</span>
+                <div id="random-quote-author"></div>
+            </div>
+            <div class="new-quote-btn" onclick="updateQuoteUI()">New Quote</div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <div id="stock-analysis-dashboard">
+        <div id="root"></div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <script =".//stockAnalysisDashboard/stockAnalysisDashboard.js"></script> -->
+ <script type="text/javascript" src="/crapsgame/crapsgame.js"></script>
+<script type="text/javascript" src="/randomQuoteGenerator/randomQuoteGenerator.js"></script>
+<script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
+<script type="module" src="/src/main.tsx"></script>
+<script>
+
+    function makeDreamComeTrue() {
+        const intro = document.querySelector(".intro");
+        intro.style.backgroundImage = 'url("https://media.giphy.com/media/HhTXt43pk1I1W/200.gif")';
+        intro.style.backgroundSize = "cover";
+        intro.style.backgroundPosition = "center";
+        intro.style.backgroundRepeat = "no-repeat";
+    }
+
+    // New helper function to handle the UI update
+    async function updateQuoteUI() {
+        // 1. Call your async function and wait for the object {content, author}
+        const quote = await getNewRandomQuote();
+
+        // 2. Find the HTML elements
+        const textElement = document.getElementById('random-quote-text');
+        const authorElement = document.getElementById('random-quote-author');
+
+        // 3. Update the text on screen
+        if (textElement && authorElement) {
+            textElement.innerText = quote.content;
+            authorElement.innerText = quote.author;
+        }
+    }
+
+    // Call it on page load
+    window.onload = function () {
+        updateQuoteUI();
+    };
+</script>
